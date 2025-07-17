@@ -9,7 +9,7 @@ import {
   DialogTrigger,
   DialogDescription,
 } from '../ui/Dialog';
-import { FileText, Eye, Trash2, Calendar, Clock, Briefcase, History, Download, Share2, BookOpen } from 'lucide-react';
+import { FileText, Eye, Trash2, Calendar, Briefcase, History, Download, Share2, BookOpen } from 'lucide-react';
 import ResumePreview from '../preview/ResumePreview';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
