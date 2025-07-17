@@ -1,7 +1,7 @@
 import { useResumeStore } from '../../store/resumeStore';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardBadge } from '../ui/Card';
 import { Button } from '../ui/Button';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, Area, AreaChart } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell} from 'recharts';
 import { 
   BrainCircuit, Briefcase, GraduationCap, AlertTriangle, User, FileText, Award, GitBranch,
   Linkedin, Github, Globe, Mail, Phone, TrendingUp, Calendar, Target, Zap, Star, Trophy, Code
@@ -115,7 +115,7 @@ export default function ProfileAnalytics() {
   const analytics = useMemo(() => {
     if (!coreProfile) return null;
 
-    const { personalDetails, summary, skills, experience, education, projects, certifications } = coreProfile;
+    const { skills, experience, education, projects, certifications } = coreProfile;
     
     // Flatten skills regardless of structure
     const allSkills: string[] = skills && typeof skills === 'object' ? Object.values(skills).flat() : Array.isArray(skills) ? skills : [];
@@ -420,7 +420,7 @@ export default function ProfileAnalytics() {
                           paddingAngle={2}
                           dataKey="value"
                         >
-                          {(analytics?.skillCategories || []).map((entry, index) => (
+                          {(analytics?.skillCategories || []).map((_, index) => (
                             <Cell key={`cell-${index}`} fill={CHART_COLORS[index % CHART_COLORS.length]} />
                           ))}
                         </Pie>
