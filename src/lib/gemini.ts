@@ -47,7 +47,7 @@ Secondary Profiles:
 
 Merging Rules (follow **all** with extreme precision):
 
-1.  **Primary Data Precedence** – The final 'name', 'email', and 'phone' fields come **only** from the Primary Profile.
+1.  **Primary Data Precedence** – The final 'name', 'email', and 'phone' fields come from the Primary Profile **unless** the Primary Profile has empty/missing values, in which case use the first non-empty value from the Secondary Profiles.
 
 2.  **Synthesised Summary** – Create a brand-new 'summary' (2-4 sentences) that factually blends the candidate's core role, total years of experience, key technical domains, and headline technologies from **all** profiles.
 
@@ -68,9 +68,9 @@ f. Sort the categories alphabetically too.
     c. 'title' is the most recent title; append earlier titles chronologically in parentheses.  
     d. **Responsibilities**  
        i.   Merge all responsibility bullets; delete exact duplicates (case-sensitive).  
-       ii.  Tag each bullet as "Backend", "Mobile", "Frontend", or "Other".  
-       iii. Order bullets strictly: Backend → Mobile → Frontend → Other.  
-       iv.  Re-phrase each bullet to use strong, achievement-oriented verbs **without discarding information**.
+       ii.  Each responsibility must be a **plain string** - do NOT create objects with type/text properties.  
+       iii. Re-phrase each bullet to use strong, achievement-oriented verbs **without discarding information**.  
+       iv.  Order bullets by relevance and impact, with most significant achievements first.
 
 5.  **Project Merging** – Similar logic applies, keyed on case-insensitive 'title'. Merge 'description' arrays, de-duplicate, and keep the record with the richest 'techStack'/'link'.
 

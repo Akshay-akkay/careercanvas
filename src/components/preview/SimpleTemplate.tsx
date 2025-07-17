@@ -59,9 +59,18 @@ export const SimpleTemplate: React.FC<SimpleTemplateProps> = ({ profile }) => {
                 </div>
                 <p className="text-gray-700">{exp.company}</p>
                 <ul className="list-disc list-inside ml-4 mt-1 space-y-0.5">
-                  {exp.responsibilities.slice(0, 6).map((r, i) => (
-                    <li key={i}>{typeof r === 'string' ? r : (r as any).description || JSON.stringify(r)}</li>
-                  ))}
+                  {exp.responsibilities.slice(0, 6).map((r, i) => {
+                    let text = '';
+                    if (typeof r === 'string') {
+                      text = r;
+                    } else if (r && typeof r === 'object') {
+                      const respObj = r as { text?: string; description?: string };
+                      text = respObj.text || respObj.description || String(r);
+                    } else {
+                      text = String(r);
+                    }
+                    return <li key={i}>{text}</li>;
+                  })}
                 </ul>
               </div>
             ))}

@@ -2,7 +2,7 @@
   <defs>
     <linearGradient id="cc-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#204DFF"/>
-      <stop offset="100%" stop-color="#FFED89"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
     </linearGradient>
   </defs>
   <!-- Canvas frame -->

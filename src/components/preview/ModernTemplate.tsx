@@ -122,14 +122,17 @@ export const ModernTemplate: React.FC<ModernTemplateProps> = ({ profile }) => {
                 </div>
                 <ul className="list-disc list-outside pl-4 mt-0.5 space-y-0.5 text-[11px]">
                   {exp.responsibilities.slice(0, 8).map((resp, i) => {
+                    let text = '';
                     if (typeof resp === 'string') {
-                      return <li key={i}>{resp}</li>;
+                      text = resp;
                     } else if (resp && typeof resp === 'object') {
-                      const desc = (resp as { description?: string })?.description;
-                      return <li key={i}>{desc || JSON.stringify(resp)}</li>;
+                      // Handle objects with text or description properties
+                      const respObj = resp as { text?: string; description?: string };
+                      text = respObj.text || respObj.description || String(resp);
                     } else {
-                      return <li key={i}>{String(resp)}</li>;
+                      text = String(resp);
                     }
+                    return <li key={i}>{text}</li>;
                   })}
                 </ul>
               </div>

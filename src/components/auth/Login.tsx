@@ -53,7 +53,7 @@ const Login = () => {
           opacity: 0.4;
         }
         .aurora-1 { top: -20%; left: -20%; width: 50vw; height: 50vw; background: #204DFF; animation: move1 15s infinite alternate; }
-        .aurora-2 { bottom: -20%; right: -20%; width: 40vw; height: 40vw; background: #FFED89; animation: move2 18s infinite alternate; }
+        .aurora-2 { bottom: -20%; right: -20%; width: 40vw; height: 40vw; background: #8B5CF6; animation: move2 18s infinite alternate; }
         .aurora-3 { top: 20%; right: 10%; width: 30vw; height: 30vw; background:rgb(63, 39, 136); animation: move3 20s infinite alternate; }
         @keyframes move1 { from { transform: translate(0, 0) rotate(0deg); } to { transform: translate(100px, 50px) rotate(30deg); } }
         @keyframes move2 { from { transform: translate(0, 0) scale(1); } to { transform: translate(-80px, 40px) scale(1.5); } }
@@ -100,7 +100,7 @@ const Login = () => {
                         colors: {
                           ...ThemeSupa.default.colors,
                           brand: '#204DFF',
-                          brandAccent: '#FFED89',
+                          brandAccent: '#8B5CF6',
                           brandButtonText: 'black',
                           defaultButtonBackgroundHover: '#204DFF',
                         },
